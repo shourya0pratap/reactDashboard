@@ -2,7 +2,7 @@ import React from "react";
 
 const StudentTable = () => {
   return (
-    <>
+    <div id="tableWrapper">
       <table className="table">
         <thead>
           <tr>
@@ -13,7 +13,7 @@ const StudentTable = () => {
           </tr>
         </thead>
       </table>
-    </>
+    </div>
   );
 };
 

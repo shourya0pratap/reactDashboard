@@ -17,7 +17,7 @@ const AddStudentForm = () => {
     });
   };
   return (
-    <div>
+    <div id="formWrapper">
       <form id="appForm">
         <input
           class="formInput"
