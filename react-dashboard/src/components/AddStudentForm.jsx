@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const AddStudentForm = () => {
   const [formData, updateFormData] = useState({
     studentName: "",
-    studentMarks: 0,
+    studentMarks: "",
     studentStatus: "fail",
   });
 
@@ -16,24 +16,31 @@ const AddStudentForm = () => {
       };
     });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const status = formData.marks >= 40 ? "pass" : "fail";
+  };
   return (
     <div id="formWrapper">
-      <form id="appForm">
+      <form id="appForm" onSubmit={handleSubmit}>
         <input
-          class="formInput"
+          className="formInput"
           type="text"
           placeholder="Student Name"
           name="studentName"
           value={formData.studentName}
           onChange={handleChange}
+          required
         />
         <input
-          class="formInput"
+          className="formInput"
           type="number"
           placeholder="Score(0 - 100)"
-          name="studentName"
-          value={formData.studentName}
+          name="studentMarks"
+          value={formData.studentMarks}
           onChange={handleChange}
+          required
         />
         <input type="submit" value="+Add" />
       </form>

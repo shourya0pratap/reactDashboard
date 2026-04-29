@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Allan:wght@400;700&display=swap');
+
+:root {
+  --primary: #2c2c2c;
+  --secondary: #646464;
+  --accent: #8800ff;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero {
+  font-family: "Monoton";
+  font-size: 6rem;
+  font-weight: 100;
+}
+
+footer {
+    font-family: "Allan";
+    font-size: 2rem;
+}

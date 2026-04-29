@@ -4,6 +4,7 @@ import StudentTable from "./components/StudentTable";
 import AddStudentForm from "./components/AddStudentForm";
 import StudentRow from "./components/StudentRow";
 import AppFooter from "./components/AppFooter";
+import "./App.css";
 
 const App = () => {
   return (
