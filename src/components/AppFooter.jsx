@@ -5,7 +5,7 @@ const AppFooter = () => {
   return (
     <footer>
       <p style={{ textAlign: "center", margin: 0, fontWeight: "bold" }}>
-        Web Dev II - Assignment 3 © 2026
+        Shourya Pratap © 2026
       </p>
     </footer>
   );
