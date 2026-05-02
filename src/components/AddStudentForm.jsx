@@ -32,6 +32,7 @@ const AddStudentForm = ({ onAddStudent }) => {
 
   return (
     <div id="formWrapper">
+      <h2>Register Student</h2>
       <form id="appForm" onSubmit={handleSubmit}>
         <input
           className="formInput"

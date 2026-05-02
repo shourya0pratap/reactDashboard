@@ -1,6 +1,4 @@
-/* App.css */
-
-/* Define our clay color palette */
+/* Define clay color palette */
 :root {
   --clay-bg: #e0e5ec;
   --clay-shadow-dark: #a3b1c6;
@@ -36,7 +34,6 @@ footer {
   background: var(--clay-bg);
   border-radius: 24px;
   padding: 24px;
-  /* The secret sauce: an outer dark shadow and outer light highlight */
   box-shadow:
     9px 9px 16px var(--clay-shadow-dark),
     -9px -9px 16px var(--clay-shadow-light);
@@ -59,6 +56,7 @@ h3 {
   color: var(--text-main);
   outline: none;
   font-size: 1rem;
+  width: 250px;
   /* INSET shadows make it look carved out */
   box-shadow:
     inset 6px 6px 10px var(--clay-shadow-dark),
@@ -144,4 +142,63 @@ input[type="submit"]:active {
   text-align: center;
   padding: 8px 12px;
   margin: 0;
+}
+
+/* 1. Horizontal Stats Layout */
+.statsRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 15px;
+}
+
+/* Give the individual stats a pushed-in clay effect */
+.statsRow p {
+  margin: 0;
+  padding: 12px 24px;
+  background: var(--clay-bg);
+  border-radius: 16px;
+  box-shadow:
+    inset 4px 4px 8px var(--clay-shadow-dark),
+    inset -4px -4px 8px var(--clay-shadow-light);
+}
+
+/* 2. Wider Table Input */
+.tableInput {
+  width: 120px !important; /* Made it longer */
+  text-align: center;
+  padding: 8px 12px;
+  margin: 0;
+}
+
+/* 3. Hide the Spin Buttons on Number Inputs */
+/* For Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 4. Delete Button Clay Styling */
+.deleteBtn {
+  background: var(--clay-bg);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #e53e3e; /* A soft red color for danger */
+  font-weight: bold;
+  cursor: pointer;
+  /* Popping out clay effect */
+  box-shadow:
+    4px 4px 8px var(--clay-shadow-dark),
+    -4px -4px 8px var(--clay-shadow-light);
+  transition: all 0.1s ease;
+}
+
+.deleteBtn:active {
+  /* Pushed in when clicked */
+  box-shadow:
+    inset 3px 3px 6px var(--clay-shadow-dark),
+    inset -3px -3px 6px var(--clay-shadow-light);
 }
