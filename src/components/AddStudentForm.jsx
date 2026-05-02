@@ -1,26 +1,35 @@
 import React, { useState } from "react";
 
-const AddStudentForm = () => {
+const AddStudentForm = ({ onAddStudent }) => {
   const [formData, updateFormData] = useState({
     studentName: "",
     studentMarks: "",
-    studentStatus: "fail",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    updateFormData((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
+    updateFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const status = formData.marks >= 40 ? "pass" : "fail";
+
+    // Pass the data up to the App component
+    onAddStudent({
+      studentName: formData.studentName,
+      studentMarks: Number(formData.studentMarks),
+    });
+
+    // Clear form after submission
+    updateFormData({
+      studentName: "",
+      studentMarks: "",
+    });
   };
+
   return (
     <div id="formWrapper">
       <form id="appForm" onSubmit={handleSubmit}>
@@ -36,11 +45,13 @@ const AddStudentForm = () => {
         <input
           className="formInput"
           type="number"
-          placeholder="Score(0 - 100)"
+          placeholder="Score (0 - 100)"
           name="studentMarks"
           value={formData.studentMarks}
           onChange={handleChange}
           required
+          min="0"
+          max="100"
         />
         <input type="submit" value="+Add" />
       </form>
